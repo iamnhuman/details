@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ef">
+  <meta name="description" content="Изучите Toyota GR Supra A90 изнутри: интерактивная 3D-модель, рядная шестёрка B58, ходовая и аэродинамика.">
+  <title>GR SUPRA A90 / Анатомия в деталях</title>
+  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./hero.css">
+  <script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+  <a class="skip" href="#explore">Перейти к модели</a>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Machine Atlas, начало страницы"><span class="brand-symbol" aria-hidden="true">m<span>↗</span></span><span>MACHINE<span class="brand-second">ATLAS</span></span></a>
+    <nav aria-label="Навигация"><a class="active" href="#drive">3D-история<span>00</span></a><a href="#explore">Исследовать<span>01</span></a><a href="#engine-story">Двигатель<span>02</span></a><a href="#legacy">Наследие<span>03</span></a></nav>
+    <span class="header-note"><i></i> ИНЖЕНЕРИЯ В ДЕТАЛЯХ</span>
+  </header>
+  <main>
+    <section class="driving-hero" id="drive" aria-labelledby="page-title">
+      <div class="hero-heading">
+        <div><p class="eyebrow">TOYOTA GR SUPRA <span>/ A90 · ПЯТОЕ ПОКОЛЕНИЕ</span></p><h1 id="page-title">Легенда. <em>Изнутри.</em></h1></div>
+        <div class="hero-intro"><p>От первой Celica Supra до современной A90. <br>Смотрите, как автомобиль раскрывается по деталям, и слушайте его историю.</p><button id="hero-watch" class="hero-cta" aria-label="Запустить 3D-историю Supra" disabled>Смотреть с голосом <span aria-hidden="true">▶</span></button></div>
+      </div>
+      <div class="hero-stage narrated-hero" id="hero-stage" role="region" aria-label="3D-история Toyota Supra с разборкой деталей и русской озвучкой" aria-busy="true">
+        <div class="hero-scene-top"><span><i></i> FIG. 00 / GR SUPRA A90</span><span class="hero-scene-note">АНАТОМИЯ ЛЕГЕНДЫ · 7 ГЛАВ</span></div>
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <img id="hero-fallback" src="./assets/supra-static.jpg" alt="Toyota GR Supra A90, вид спереди в три четверти">
+        <div class="hero-loader" id="hero-loader" role="status"><span aria-hidden="true"></span><span data-load-message>Готовим историю Supra…</span><button data-retry hidden>Повторить загрузку</button></div>
+        <div class="hero-scene-heading"><span id="hero-chapter-number">01 / 07</span><h2 id="hero-chapter-title">История продолжается</h2><p id="hero-chapter-kicker">1978 → 1993 → 2019</p></div>
+        <div class="hero-part-label" hidden></div><div class="hero-part-label" hidden></div><div class="hero-part-label" hidden></div>
+        <div class="hero-story-bottom">
+          <p class="hero-subtitle" id="hero-subtitle">От Celica Supra к пятому поколению GR Supra</p>
+          <div class="hero-timeline-row"><label class="sr-only" for="hero-progress">Время 3D-истории Supra</label><input id="hero-progress" type="range" min="0" max="146.538" value="0" step="0.1" disabled><output id="hero-time" for="hero-progress">0:00 / 2:26</output></div>
+          <div class="hero-story-controls"><button id="hero-play" aria-label="Смотреть историю Supra с голосом" aria-pressed="false" disabled>▶ Смотреть с голосом</button><div><button id="hero-preview-pause" aria-label="Приостановить анимацию" disabled>Ⅱ</button><button id="hero-sound" aria-label="Включить голос и звуки деталей" aria-pressed="false" disabled>Звук выкл.</button><button id="hero-restart" aria-label="Вернуть историю в начало" title="В начало" disabled>↺</button></div></div>
+        </div>
+        <div class="hero-audio-error" id="hero-audio-error" role="status" hidden>Озвучка не загрузилась. <button id="hero-silent">Смотреть без звука</button></div>
+        <audio id="hero-audio" preload="metadata"></audio>
+        <span class="sr-only" id="hero-phase-announce" aria-live="polite"></span>
+      </div>
+      <div class="hero-chapter-nav" role="group" aria-label="Главы 3D-истории Supra"><button data-story-chapter="heritage" aria-pressed="true" disabled><span>01</span>История</button><button data-story-chapter="body" aria-pressed="false" disabled><span>02</span>Кузов</button><button data-story-chapter="engine" aria-pressed="false" disabled><span>03</span>B58</button><button data-story-chapter="intake" aria-pressed="false" disabled><span>04</span>Наддув</button><button data-story-chapter="drivetrain" aria-pressed="false" disabled><span>05</span>Привод</button><button data-story-chapter="chassis" aria-pressed="false" disabled><span>06</span>Шасси</button><button data-story-chapter="reunion" aria-pressed="false" disabled><span>07</span>Сборка</button></div>
+      <div class="hero-caption"><span>3D-ИСТОРИЯ · РУССКАЯ ОЗВУЧКА · 2:26</span><a id="hero-explore" href="#explore">Исследовать самому <span aria-hidden="true">↓</span></a></div>
+      <details class="hero-transcript"><summary>Текст текущей главы и источники</summary><p id="hero-narration-text">История Supra началась в 1978 году.</p><p class="hero-transcript-sources"><a href="https://global.toyota/en/newsroom/toyota/21235480.html" target="_blank" rel="noopener noreferrer">История · Toyota ↗</a><a href="https://www.toyota.com/content/dam/toyota/brochures/pdf/2025/grsupra_ebrochure.pdf" target="_blank" rel="noopener noreferrer">GR Supra 3.0 · 2025 · США ↗</a></p></details>
+      <section class="hero-film" id="film" aria-labelledby="film-title">
+        <div class="film-copy"><p class="eyebrow">FILM 01 / ВНУТРИ ДВИЖЕНИЯ</p><h2 id="film-title">Механика.<br><em>В движении.</em></h2><p>Поршни, коленвал и привод — крупным планом. Ролик показывает работу двигателя и процесс создания его 3D-визуализации.</p><span class="film-credit">ВИЗУАЛИЗАЦИЯ · STYLERVFX <span>01:06</span></span></div>
+        <div class="film-player">
+          <video id="mechanics-film" controls playsinline preload="none" poster="./assets/mechanics-film-poster.jpg" width="1280" height="720" aria-label="Видеоролик Stylervfx о работе двигателя и создании 3D-визуализации"><source src="./assets/mechanics-film.mp4" type="video/mp4">Ваш браузер не поддерживает видео. <a href="./assets/mechanics-film.mp4">Открыть ролик</a>.</video>
+          <button class="film-start" id="film-start" aria-label="Смотреть видео о механике двигателя"><span class="film-start-icon" aria-hidden="true">▶</span><span>Смотреть ролик <small>01:06</small></span></button>
+          <p class="film-error" id="film-error" role="status" hidden>Не удалось запустить видео. <a href="./assets/mechanics-film.mp4">Открыть ролик отдельно ↗</a></p>
+        </div>
+      </section>
+      <div class="hero-story" id="hero-story" aria-label="Что приводит Supra в движение">
+        <article><p class="hero-chapter"><span>01</span> ПОД КАПОТОМ</p><h2>Шесть цилиндров. <br>Один ритм.</h2><p>Под длинным капотом работает трёхлитровая рядная шестёрка B58 с одной турбиной twin-scroll. В версии для США она развивает 382 hp и 499 Н·м, а пик момента доступен с 1800 об/мин.</p><button data-hero-part="engine">Открыть B58 <span aria-hidden="true">↗</span></button></article>
+        <article><p class="hero-chapter"><span>02</span> ПУТЬ К АСФАЛЬТУ</p><h2>Сила идёт назад.</h2><p>Коробка передач, кардан и активный задний дифференциал передают тягу на задние колёса. На выбор — восьмиступенчатый автомат или шестиступенчатая механика iMT, которая согласует обороты при переключениях.</p><button data-hero-part="gearbox">Посмотреть трансмиссию <span aria-hidden="true">↗</span></button></article>
+        <article><p class="hero-chapter"><span>03</span> СВЯЗЬ С ДОРОГОЙ</p><h2>Контроль в каждом <br>движении.</h2><p>Спереди — стойки MacPherson, сзади — многорычажная подвеска. Адаптивные амортизаторы меняют характер её работы, а передние четырёхпоршневые суппорты Brembo сжимают вентилируемые диски диаметром 348 мм.</p><button data-hero-part="suspension-front">Рассмотреть подвеску <span aria-hidden="true">↗</span></button></article>
+      </div>
+      <p class="hero-source">Характеристики GR Supra 3.0, 2025, США. <a href="https://www.toyota.com/content/dam/toyota/brochures/pdf/2025/grsupra_ebrochure.pdf" target="_blank" rel="noopener noreferrer">Toyota · технические данные ↗</a></p>
+    </section>
+    <section class="intro" aria-labelledby="atlas-title">
+      <div class="intro-left"><p class="eyebrow"><span>ЯПОНСКИЕ ИКОНЫ</span><span class="slash">/</span> ВЫПУСК 001</p><h2 id="atlas-title">Анатомия <em>GR Supra.</em></h2></div>
+      <div class="intro-right"><p>Пятое поколение. Каждая линия имеет смысл.</p><p class="intro-small">Разберите Toyota GR Supra A90 на детали.<br>Приближайте. Вращайте. Исследуйте.</p></div>
+    </section>
+    <section class="atlas" id="explore" aria-label="Интерактивный атлас Toyota Supra">
+      <div class="atlas-bar"><div class="model-name"><span class="tiny-square"></span><strong>TOYOTA GR SUPRA</strong><span class="model-code">A90 · MK V</span></div><span class="edition">GR · 3.0L</span><button id="fullscreen" class="icon-button" aria-label="Развернуть модель" title="Развернуть модель"><svg viewBox="0 0 24 24"><path d="M8 4H4v4m12-4h4v4M4 16v4h4m12-4v4h-4"/></svg></button></div>
+      <div class="atlas-main">
+        <div class="viewer-column">
+          <div class="stage iso-plate" id="stage" tabindex="0" role="region" aria-busy="true" aria-label="3D-модель Supra. Перетаскивайте для вращения, используйте стрелки для поворота, плюс и минус для масштаба, пробел для разборки, Home для сброса.">
+            <div class="stage-top"><span>FIG. 01 <span class="muted">/ ОБЩИЙ ВИД</span></span><span id="projection-label">ИЗОМЕТРИЯ</span></div>
+            <div class="watermark" aria-hidden="true">A90</div>
+            <canvas id="car-canvas" aria-hidden="true"></canvas>
+            <img id="fallback-image" class="fallback-image" src="./assets/supra-static.jpg" alt="Изометрическая иллюстрация Toyota GR Supra A90" hidden>
+            <div class="loader" id="loader" role="status"><span aria-hidden="true"></span><span data-load-message>Загружаем детальную модель…</span><button data-retry hidden>Повторить загрузку</button></div>
+            <div class="hotspots" id="hotspots" aria-label="Выбранная деталь"><button class="hotspot selected" id="selected-hotspot" title="Рассмотреть выбранную деталь отдельно">01</button></div>
+            <div class="part-tooltip" id="part-tooltip" role="tooltip" hidden><span id="hover-number"></span><div><strong id="hover-name"></strong><small>Нажмите, чтобы выбрать</small></div></div>
+            <div class="isolated-badge" id="isolated-badge" hidden><span id="isolated-name"></span><button id="isolated-prev" aria-label="Предыдущая деталь в просмотре">←</button><button id="isolated-next" aria-label="Следующая деталь в просмотре">→</button><button id="exit-isolate" aria-label="Вернуть всю машину">×</button></div>
+            <button id="stage-motion" class="stage-motion" aria-pressed="false" hidden>▷ Запустить движение</button>
+            <div class="stage-bottom"><span class="drag-hint"><svg viewBox="0 0 24 24"><path d="M5 10a7 7 0 0 1 13-3l2 3m0-6v6h-6M19 14a7 7 0 0 1-13 3l-2-3m0 6v-6h6"/></svg><span id="interaction-hint">Вращайте · нажмите на деталь</span></span><span class="scale-label">3D / ТЕХНИЧЕСКАЯ ИЛЛЮСТРАЦИЯ</span></div>
+          </div>
+          <div class="view-toolbar"><div class="view-presets" role="group" aria-label="Ракурс модели"><button class="selected" data-view="iso" aria-pressed="true">3/4</button><button data-view="side" aria-pressed="false">Сбоку</button><button data-view="front" aria-pressed="false">Спереди</button><button data-view="top" aria-pressed="false">Сверху</button></div><div class="view-tools"><button id="technical" class="technical-button" aria-pressed="true" title="Технические контуры">Контуры</button><button id="rotate" class="icon-button" aria-label="Автовращение" aria-pressed="false" title="Автовращение"><svg viewBox="0 0 24 24"><path d="M20 11a8 8 0 1 0-2 6M20 4v7h-7"/></svg></button><button id="zoom-out" class="icon-button" aria-label="Уменьшить модель" title="Уменьшить"><svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg></button><button id="zoom-in" class="icon-button" aria-label="Увеличить модель" title="Увеличить"><svg viewBox="0 0 24 24"><path d="M6 12h12m-6-6v12"/></svg></button><button id="reset" class="icon-button" aria-label="Сбросить вид" title="Сбросить вид"><svg viewBox="0 0 24 24"><path d="M5 8a8 8 0 1 1-1 7M5 3v5h5"/></svg></button></div></div>
+          <div class="explode-control"><button id="explode-toggle" class="explode-button" aria-pressed="false"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></svg><span>Разобрать модель</span></button><div class="range-wrap"><label class="sr-only" for="explode-range">Степень разборки</label><input id="explode-range" type="range" min="0" max="100" value="0" aria-valuetext="Модель собрана"><output id="explode-value" for="explode-range">0<span>%</span></output></div></div>
+        </div>
+        <aside class="inspector" aria-label="Информация об узлах">
+          <div class="inspector-title"><span>КАТАЛОГ ДЕТАЛЕЙ</span><span class="muted" id="part-count"></span></div>
+          <div class="catalog-controls"><label class="sr-only" for="part-category">Раздел деталей</label><select id="part-category"><option value="all">Все разделы</option></select><label class="sr-only" for="part-search">Найти деталь</label><input id="part-search" type="search" placeholder="Найти деталь…" autocomplete="off"></div>
+          <div class="systems" id="part-list" role="group" aria-label="Выбрать деталь"></div>
+          <p class="catalog-empty" id="catalog-empty" hidden>Деталей не найдено. Попробуйте другое название.</p>
+          <div class="system-detail" aria-live="polite"><div class="detail-heading"><span class="detail-index" id="detail-index"></span><div class="part-navigation"><button id="previous-part" aria-label="Предыдущая деталь">←</button><button id="next-part" aria-label="Следующая деталь">→</button></div></div><h2 id="detail-title"></h2><p id="detail-text"></p><dl class="detail-facts" id="detail-facts"></dl><button id="detail-focus" class="detail-focus" aria-pressed="false">Рассмотреть отдельно <span>↗</span></button><button id="part-motion" class="motion-button" aria-pressed="false" hidden>Запустить движение</button></div>
+          <div class="paint-control"><span>ЦВЕТ КУЗОВА</span><div role="group" aria-label="Цвет кузова"><button class="swatch selected" data-color="#e1e3df" style="--swatch:#e1e3df" aria-label="Белый" aria-pressed="true"></button><button class="swatch" data-color="#a52d25" style="--swatch:#a52d25" aria-label="Красный" aria-pressed="false"></button><button class="swatch" data-color="#384349" style="--swatch:#384349" aria-label="Графит" aria-pressed="false"></button><button class="swatch" data-color="#c7b89b" style="--swatch:#c7b89b" aria-label="Шампань" aria-pressed="false"></button></div></div>
+        </aside>
+      </div>
+      <div class="atlas-caption"><span><i></i> ВЫБЕРИТЕ ДЕТАЛЬ · РАССМОТРИТЕ ОТДЕЛЬНО</span><span id="model-status" data-readout>Кузов · модель собрана</span></div>
+    </section>
+    <section class="spec-strip" aria-label="Характеристики GR Supra 3.0, США"><div><span>ДВИГАТЕЛЬ</span><strong>B58</strong><small>Рядная шестёрка · Twin-scroll</small></div><div><span>РАБОЧИЙ ОБЪЁМ</span><strong>3.0 <em>л</em></strong><small>Шесть цилиндров в ряд</small></div><div><span>МОЩНОСТЬ</span><strong>382 <em>hp</em></strong><small>GR Supra 3.0 · США</small></div><div><span>КРУТЯЩИЙ МОМЕНТ</span><strong>499 <em>Н·м</em></strong><small>368 lb-ft · задний привод</small></div></section>
+    <section class="engine-story" id="engine-story" aria-labelledby="engine-title"><div class="engine-drawing"><div class="figure-top"><span>FIG. 02</span><span>B58 / INLINE SIX</span></div><img src="./assets/engine.svg" alt="Детальная изометрическая схема рядного шестицилиндрового двигателя B58" loading="lazy"><div class="figure-bottom"><span>01—06 / ШЕСТЬ ЦИЛИНДРОВ</span><span>3.0 L · DOHC</span></div></div><div class="engine-copy"><p class="eyebrow">02 / СЕРДЦЕ МАШИНЫ</p><h2 id="engine-title">Шесть цилиндров.<br><em>Никаких случайностей.</em></h2><p>B58 — продольно установленная трёхлитровая рядная шестёрка с алюминиевым блоком. Одна турбина twin-scroll использует два канала для потока выхлопных газов.</p><p>Впуск, топливная рампа, охлаждение и трансмиссия образуют один механизм. Разборка открывает отдельную поясняющую схему этих узлов.</p><button class="text-link" id="explore-engine">Рассмотреть двигатель <span>↗</span></button></div></section>
+    <section class="legacy" id="legacy" aria-labelledby="legacy-title"><div><p class="eyebrow">03 / БОЛЬШЕ, ЧЕМ МАШИНА</p><h2 id="legacy-title">Легенда.<br>В новом поколении.</h2></div><div class="legacy-timeline"><article><span class="timeline-year">2019</span><div><h3>Возвращение Supra</h3><p>Мировой дебют GR Supra пятого поколения: короткая база, задний привод и новый кузов с двойным изгибом крыши.</p></div></article><article><span class="timeline-year">2023</span><div><h3>Ещё ближе к водителю.</h3><p>Для версии с рядной шестёркой появляется шестиступенчатая механическая коробка iMT. Больше контроля в каждом переключении.</p></div></article></div></section>
+  </main>
+  <footer><div class="footer-brand">MACHINE ATLAS <span>/ 001</span></div><p>Независимый атлас. Визуальная A90 с аэрокомплектом; механика показана схематично.<br>Характеристики GR Supra 3.0 для США. <a href="https://pressroom.toyota.com/vehicle/2025-toyota-gr-supra/" target="_blank" rel="noopener noreferrer">Источник: Toyota ↗</a><br>Модель: <a href="https://sketchfab.com/3d-models/toyota-supra-b7616ec43ecf4ffd8ed810d94f15eea6" target="_blank" rel="noopener noreferrer">Jiaxing · Toyota Supra</a> / <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener noreferrer">CC BY 4.0</a>. Адаптированы материалы и группировка деталей.</p><a class="footer-credit" href="https://github.com/wheresryan22/anatomy" target="_blank" rel="noopener noreferrer">CRAFTED WITH ANATOMY ↗</a></footer>
+  <div class="sr-only" id="announce" aria-live="polite"></div>
+  <script type="module" src="./film.mjs"></script>
+  <script defer src="./startup.js"></script>
+</body>
+</html>

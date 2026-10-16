@@ -1,0 +1,109 @@
+{
+  "air": {
+    "id": "whoosh/fs-60026-swosh-swoosh-whoosh-air-soun-1",
+    "type": "whoosh",
+    "file": "air.wav",
+    "tags": [
+      "air",
+      "free",
+      "freesound",
+      "high",
+      "quality",
+      "swoosh",
+      "swosh",
+      "whoosh"
+    ],
+    "credit": "\"Swosh swoosh whoosh air sound, free, high quality\" by qubodup",
+    "default": false,
+    "dur_s": 0.231,
+    "peak_offset_s": 0.0399,
+    "rise_ms": 31.3,
+    "centroid_hz": 319,
+    "below150": 0.001,
+    "above6k": 0.002,
+    "flatness": 0.004,
+    "note": 61.8
+  },
+  "return": {
+    "id": "whoosh/fs-60002-swoosh-15-windy-1",
+    "type": "whoosh",
+    "file": "return.wav",
+    "tags": [
+      "freesound",
+      "swoosh",
+      "windy"
+    ],
+    "credit": "\"Swoosh 15 Windy\" by qubodup",
+    "default": false,
+    "dur_s": 0.163,
+    "peak_offset_s": 0.0597,
+    "rise_ms": 50.4,
+    "centroid_hz": 467,
+    "below150": 0.0,
+    "above6k": 0.001,
+    "flatness": 0.004,
+    "note": null
+  },
+  "swish": {
+    "id": "swish/fs-395369-swish-4-1",
+    "type": "swish",
+    "file": "swish.wav",
+    "tags": [
+      "freesound",
+      "swish"
+    ],
+    "credit": "\"Swish 4\" by ihitokage",
+    "default": false,
+    "dur_s": 0.156,
+    "peak_offset_s": 0.0458,
+    "rise_ms": 35.8,
+    "centroid_hz": 1948,
+    "below150": 0.001,
+    "above6k": 0.084,
+    "flatness": 0.186,
+    "note": null
+  },
+  "click": {
+    "id": "click/kenney-rpg-metal-click",
+    "type": "click",
+    "file": "click.wav",
+    "tags": [
+      "click",
+      "kenney",
+      "latch",
+      "metal",
+      "rpg"
+    ],
+    "credit": "Kenney (kenney.nl), RPG Audio",
+    "default": false,
+    "dur_s": 0.098,
+    "peak_offset_s": 0.0079,
+    "rise_ms": 1.6,
+    "centroid_hz": 4774,
+    "below150": 0.0,
+    "above6k": 0.3,
+    "flatness": 0.195,
+    "note": 97.6
+  },
+  "latch": {
+    "id": "click/kenney-rpg-metal-latch",
+    "type": "click",
+    "file": "latch.wav",
+    "tags": [
+      "kenney",
+      "latch",
+      "metal",
+      "rpg"
+    ],
+    "credit": "Kenney (kenney.nl), RPG Audio",
+    "default": false,
+    "dur_s": 0.135,
+    "peak_offset_s": 0.0071,
+    "rise_ms": 1.6,
+    "centroid_hz": 5172,
+    "below150": 0.0,
+    "above6k": 0.316,
+    "flatness": 0.3,
+    "note": 94.4
+  }
+}

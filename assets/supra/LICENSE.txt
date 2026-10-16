@@ -1,0 +1,12 @@
+Model Information:
+* title:	Toyota Supra
+* source:	https://sketchfab.com/3d-models/toyota-supra-b7616ec43ecf4ffd8ed810d94f15eea6
+* author:	Jiaxing (https://sketchfab.com/saitoyang)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Toyota Supra" (https://sketchfab.com/3d-models/toyota-supra-b7616ec43ecf4ffd8ed810d94f15eea6) by Jiaxing (https://sketchfab.com/saitoyang) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+Modifications: texture-free paper materials, component grouping and exploded illustration. Door export fragments joined with 0.05 mm vertex tolerance; contours recalculated. Original triangle count retained.
